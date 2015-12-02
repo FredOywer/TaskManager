@@ -1,0 +1,96 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <include
+        android:id="@+id/appBar2"
+        layout="@layout/app_bar" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tvTtl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Task:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/txtInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvTtl">
+
+                <EditText
+                    android:id="@+id/etDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:hint="Enter Title"
+                    android:inputType="textCapSentences" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tvPriority"
+                android:layout_alignParentBottom="true"
+                android:gravity="bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="36dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:text="Priority:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+            <RadioGroup
+                android:id="@+id/pr"
+                android:layout_alignParentBottom="true"
+                android:gravity="bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/tvPriority"
+                android:layout_toRightOf="@+id/tvPriority">
+
+                <RadioButton
+                    android:id="@+id/radioHigh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="High" />
+
+                <RadioButton
+                    android:id="@+id/radioLow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Low" />
+            </RadioGroup>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlay1"
+        android:background="@color/primaryColor"
+        android:layout_weight="4.5"
+        android:gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <ImageButton
+            android:background="@drawable/add_pressed"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/ibTick"
+            android:contentDescription="@null" />
+
+    </RelativeLayout>
+
+</LinearLayout>
