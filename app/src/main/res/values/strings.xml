@@ -15,4 +15,9 @@
     <string name="help_edit_task">Click on the task you want to edit. Enter a new title or choose a different priority level. Click on the button with a \'Plus\' sign to save changes</string>
     <string name="help_remove_task">Press and hold on the task you want to remove. Select the option of \'Remove\' on the message that pops up</string>
     <string name="help">Help</string>
+    <string name="tvTask">Task:</string>
+    <string name="etTitle">Enter Title</string>
+    <string name="tvPriority">Priority:</string>
+    <string name="radioHigh">High</string>
+    <string name="radioLow">Low</string>
 </resources>

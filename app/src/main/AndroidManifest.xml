@@ -19,11 +19,13 @@
         </activity>
         <activity
             android:name=".ToDo"
+            android:windowSoftInputMode="stateVisible"
             android:label="Create New" >
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".Edit"
+            android:windowSoftInputMode="stateVisible"
             android:label="Edit Task" >
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" />
         </activity>

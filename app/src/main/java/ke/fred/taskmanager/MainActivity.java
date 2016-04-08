@@ -16,6 +16,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -38,7 +39,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     FloatingActionButton create;
 
     Toolbar toolbar;
-    private NavigationView navDrawer;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawerToggle;
     private Boolean drawerSeen = false;
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toolbar = (Toolbar) findViewById(R.id.main_appBar);
         setSupportActionBar(toolbar);
 
-        navDrawer = (NavigationView) findViewById(R.id.main_drawer);
+        NavigationView navDrawer = (NavigationView) findViewById(R.id.main_drawer);
         navDrawer.setNavigationItemSelectedListener(this);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
@@ -129,9 +129,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, final View view, final int position, long id) {
                 AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
-                alert.setTitle("REMOVE TASK");
-                alert.setMessage("Remove this task?");
-                alert.setIcon(R.mipmap.ic_delete);
+                alert.setTitle("TASK");
+                //alert.setMessage("Choose an option");
+                alert.setIcon(R.mipmap.ic_launcher);
                 alert.setNegativeButton("Cancel", null);
                 alert.setPositiveButton("Remove", new DialogInterface.OnClickListener() {
                     @Override
@@ -145,6 +145,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         db.close();
                     }
                 });
+                alert.setNeutralButton("Share", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Holder hol = tasks.get(position);
+                        send = new Bundle();
+                        String selected = hol.getTitle();
+
+                        Intent intent = new Intent(Intent.ACTION_SEND);
+                        intent.setType("text/plain");
+                        intent.putExtra(Intent.EXTRA_TEXT, selected);
+                        startActivity(Intent.createChooser(intent, "Share via..."));
+                    }
+                });
+                alert.setCancelable(true);
                 alert.show();
                 return true;
             }

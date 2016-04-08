@@ -58,7 +58,7 @@ public class ToDo extends AppCompatActivity implements View.OnClickListener, Rad
 
         dbHelper = new DbHelper(this);
         save.setOnClickListener(this);
-        save.setOnTouchListener(this);
+        //save.setOnTouchListener(this);
         pr.setOnCheckedChangeListener(this);
     }
 
@@ -112,10 +112,10 @@ public class ToDo extends AppCompatActivity implements View.OnClickListener, Rad
         btnPosition.addRule(RelativeLayout.ALIGN_PARENT_TOP, RelativeLayout.TRUE);
         btn.setLayoutParams(btnPosition); */
 
-        ViewGroup.LayoutParams btnSize = btn.getLayoutParams();
+        /*ViewGroup.LayoutParams btnSize = btn.getLayoutParams();
         btnSize.height = 96;
         btnSize.width = 96;
-        btn.setLayoutParams(btnSize);
+        btn.setLayoutParams(btnSize); */
 
         return false;
     }

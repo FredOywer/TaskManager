@@ -17,7 +17,7 @@
 
             <TextView
                 android:id="@+id/tvTtl"
-                android:text="Task:"
+                android:text="@string/tvTask"
                 android:textAppearance="@style/TextAppearance.AppCompat.Title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -40,7 +40,7 @@
                 android:layout_marginBottom="36dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:text="Priority:"
+                android:text="@string/tvPriority"
                 android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
             <RadioGroup
@@ -56,14 +56,14 @@
                     android:id="@+id/radioHigh"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="High" />
+                    android:text="@string/radioHigh" />
 
                 <RadioButton
                     android:id="@+id/radioLow"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="Low" />
+                    android:text="@string/radioLow" />
             </RadioGroup>
     </RelativeLayout>
 
@@ -76,11 +76,22 @@
         android:layout_height="fill_parent">
 
         <ImageButton
-            android:background="@drawable/add_pressed"
+            android:background="@mipmap/ic_save"
+            android:layout_marginRight="24dp"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:id="@+id/ibUpdate"
             android:contentDescription="@null" />
+
+        <ImageButton
+            android:background="@mipmap/ic_share"
+            android:adjustViewBounds="true"
+            android:contentDescription="@null"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/ibShare"
+            android:layout_alignTop="@+id/ibUpdate"
+            android:layout_toEndOf="@+id/ibUpdate" />
 
     </RelativeLayout>
 
